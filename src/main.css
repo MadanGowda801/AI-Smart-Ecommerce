@@ -1,0 +1,222 @@
+/* ==========================================================================
+   TrustCart AI — Core Layout, Typography, Inputs, Buttons & Cards
+   All colour tokens are managed centrally in src/theme.css
+   ========================================================================== */
+
+/* CSS Reset & Foundations */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background-color: var(--bg-primary);
+  background-image: var(--bg-ambient);
+  background-attachment: fixed;
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Typography Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  line-height: 1.22;
+  color: var(--text-main);
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: 2.85rem;
+}
+
+h2 {
+  font-size: 2.05rem;
+}
+
+h3 {
+  font-size: 1.45rem;
+}
+
+h4 {
+  font-size: 1.15rem;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--text-accent);
+}
+
+/* Global Form Controls Focus & Readability */
+input,
+select,
+textarea {
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--border-focus) !important;
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+option {
+  background-color: var(--bg-secondary);
+  color: var(--text-main);
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+.gradient-text {
+  background: var(--heading-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Theme-Driven Buttons with Smooth Colour Transitions */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.72rem 1.4rem;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background var(--transition-normal), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-normal), box-shadow var(--transition-normal);
+  text-align: center;
+  user-select: none;
+  letter-spacing: -0.01em;
+}
+
+.btn-primary {
+  background: var(--accent-gradient);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(20, 184, 166, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.btn-primary:hover {
+  background: var(--accent-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(20, 184, 166, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--border-light);
+  backdrop-filter: blur(12px);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-primary);
+  color: var(--text-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-accent);
+  border: 1px solid var(--accent-primary);
+}
+
+.btn-outline:hover {
+  background: var(--accent-soft);
+  color: #ffffff;
+}
+
+/* Glassmorphism Cards */
+.card-glass {
+  background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-glass) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-normal), background var(--transition-normal);
+}
+
+.card-glass:hover {
+  border-color: var(--border-light);
+  box-shadow: var(--shadow-md);
+}
+
+/* Dropdown menu item hover */
+.dropdown-item {
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.dropdown-item:hover {
+  background: var(--accent-soft) !important;
+  color: #ffffff !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}

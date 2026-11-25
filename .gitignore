@@ -1,0 +1,69 @@
+# ==============================================================================
+# Production & Deployment Git Ignore Rules
+# ==============================================================================
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment Configuration & Secrets (CRITICAL: NEVER COMMIT REAL SECRETS)
+.env
+.env.local
+.env.*.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+*.env
+!*.env.example
+
+# InsForge CLI & Agent Skills Local State
+.insforge/
+.agent/
+.agents/
+.augment/
+.claude/
+.cline/
+.github/copilot*
+.kilocode/
+.qoder/
+.qwen/
+.roo/
+.trae/
+.windsurf/
+
+# Build and Production Distribution Output
+dist/
+dist-ssr/
+build/
+.vite/
+
+# Testing & Coverage Artifacts
+coverage/
+*.lcov
+test-results/
+.nyc_output/
+
+# Logs & Diagnostics
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor & OS Artifacts
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
